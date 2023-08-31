@@ -22,7 +22,7 @@ public class flow {
         System.out.print("Digite sua nota de geografia");
         nota4 = scanner.nextDouble();
 
-        double resultado = (nota1 + nota2 + nota3 + nota4) / 4;
+        double media = (nota1 + nota2 + nota3 + nota4) / 4;
 
         System.out.println("Sua média é " + media);
 

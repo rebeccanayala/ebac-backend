@@ -10,16 +10,16 @@ public class flow {
         double nota3;
         double nota4;
 
-        System.out.print("Digite sua nota de português");
+        System.out.println("Digite sua nota de português");
         nota1 = scanner.nextDouble();
 
-        System.out.print("Digite sua nota de matemática");
+        System.out.println("Digite sua nota de matemática");
         nota2 = scanner.nextDouble();
 
-        System.out.print("Digite sua nota de história");
+        System.out.println("Digite sua nota de história");
         nota3 = scanner.nextDouble();
 
-        System.out.print("Digite sua nota de geografia");
+        System.out.println("Digite sua nota de geografia");
         nota4 = scanner.nextDouble();
 
         double media = (nota1 + nota2 + nota3 + nota4) / 4;

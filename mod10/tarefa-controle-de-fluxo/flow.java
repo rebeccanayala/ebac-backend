@@ -28,9 +28,9 @@ public class Flow {
 
         if (media >= 7) {
             System.out.println("Você foi aprovado! :)");
-        } else if (media == 5 && media == 6) {
+        } else if (media >=5) {
             System.out.println("Você está de recuperação.");
-        } else (media <= 4) {
+        } else (media < 5) {
             System.out.println("Você foi reprovado");
         }
 

@@ -8,7 +8,6 @@ public class Colecoes {
     public static void main(String[] args) {
         Tarefa1();
         Tarefa2();
-
     }
 
     private static void Tarefa1() {

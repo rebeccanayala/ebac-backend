@@ -8,10 +8,10 @@ public class Colecoes {
         ArrayList<String> nomesFemininos = new ArrayList<>();
 
         while (true) {
-            System.out.println("Digite um nome - ou 'sair' para encerrar");
+            System.out.println("Digite um nome - ou 'fim' para encerrar");
             String nome = scanner.nextLine().trim();
 
-            if (nome.equalsIgnoreCase("sair")) {
+            if (nome.equalsIgnoreCase("fim")) {
                 break;
             }
 

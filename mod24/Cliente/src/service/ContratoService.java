@@ -17,16 +17,17 @@ public class ContratoService implements IContratoService {
 
     @Override
     public String buscar() {
-        return null;
+        contratoDao.buscar();
+        return "Sucesso";
     }
 
     @Override
     public String excluir() {
-        return null;
-    }
+        contratoDao.excluir();
+        return "Sucesso";    }
 
     @Override
     public String atualizar() {
-        return null;
-    }
+        contratoDao.atualizar();
+        return "Sucesso";    }
 }

@@ -1,4 +1,5 @@
 package domain;
+import anotacao.TipoChave;
 
 public class Cliente implements Persistente {
 

@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import services.IClienteService;
 import services.ClienteService;
+import domain.Cliente;
 
 public class ClienteServiceTest {
 

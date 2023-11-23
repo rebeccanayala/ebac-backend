@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Map;
 
-public abstract class GenericService<T extends Persistente> implements IGenericDAO<T> {
+public abstract class GenericService <T extends Persistente> implements IGenericDAO<T> {
 
     //protected Map<Class, Map<Long, T>> map = new HashMap<>();
 
@@ -50,7 +50,7 @@ public abstract class GenericService<T extends Persistente> implements IGenericD
             System.out.println("**** ERRO ****" + msg);
             throw new TipoChaveNaoEncontradaException(msg);
         }
-        return null;
+        return returnValue;
     }
 
     @Override
@@ -71,8 +71,10 @@ public abstract class GenericService<T extends Persistente> implements IGenericD
         //Map<Long, T> mapaInterno = this.map.get(getTipoClasse());
         Map<Long, T> mapaInterno = (Map<Long, T>) this.singletonMap.getMap().get(getTipoClasse());
         T objetoCadastrado = mapaInterno.get(valor);
-        Object returnValue = new Object();
-        return returnValue;
+        if (objetoCadastrado != null) {
+            mapaInterno.remove(valor, objetoCadastrado);
+        }
+        return null;
     }
 
     @Override

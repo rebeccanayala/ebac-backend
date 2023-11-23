@@ -5,42 +5,46 @@ import exceptions.TipoChaveNaoEncontradaException;
 
 import java.util.Collection;
 
-public interface IGenericService <T extends Persistente> {
+public interface IGenericService<T extends Persistente> {
 
     /**
-     * Método para cadastrar novos registro no banco de dados
+     * Método para cadastrar novos registros no banco de dados
      *
      * @param entity a ser cadastrado
-     * @return retorna verdadeiro para cadastrado e falso para não cadastrado
+     * @return true se cadastrado com sucesso, false caso contrário
+     * @throws TipoChaveNaoEncontradaException
      */
-    public Boolean cadastrar(T entity) throws TipoChaveNaoEncontradaException;
+    Boolean cadastrar(T entity) throws TipoChaveNaoEncontradaException;
 
     /**
      * Método para excluir um registro do banco de dados
      *
      * @param valor chave única do dado a ser excluído
+     * @return
      */
-    public void excluir(Long valor);
+    Object excluir(Long valor);
 
     /**
-     *Método para alterar um registro no bando de dados.
+     * Método para alterar um registro no banco de dados.
      *
      * @param entity a ser atualizado
+     * @throws TipoChaveNaoEncontradaException
      */
-    public void alterar(T entity) throws TipoChaveNaoEncontradaException;
+    void alterar(T entity) throws TipoChaveNaoEncontradaException;
 
     /**
      * Método para consultar um registro no banco de dados
      *
      * @param valor chave única do dado a ser consultado
-     * @return
+     * @return o registro encontrado ou null se não encontrado
      */
-    public T consultar(Long valor);
+    T consultar(Long valor);
 
     /**
-     * Método que irá retornar todos os registros do banco de dados de uma determinado dado ou tabela
+     * Método que irá retornar todos os registros do banco de dados de uma determinada tabela
      *
-     * @return Registros encontrados
+     * @return Coleção de registros encontrados
      */
-    public Collection<T> buscarTodos();
+    Collection<T> buscarTodos();
 }
+

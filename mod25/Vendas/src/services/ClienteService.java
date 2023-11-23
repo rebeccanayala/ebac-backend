@@ -1,14 +1,12 @@
 package services;
 
-import dao.IClienteDAO;
 import dao.generics.GenericService;
 import domain.Cliente;
-import exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteService extends GenericService<Cliente> implements IClienteService {
     @Override
     public Class<Cliente> getTipoClasse() {
-        return null;
+        return Cliente.class;
     }
 
     @Override
@@ -16,18 +14,14 @@ public class ClienteService extends GenericService<Cliente> implements IClienteS
 
     }
 
-    @Override
-    public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
-        return null;
+    public ClienteService() {
+        super();
     }
 
     @Override
-    public Cliente buscarPorCPF(Long cpf) {
+    public Object excluir(Long id) {
+        // Implementação da exclusão, se necessário.
         return null;
-    }
-
-    public Boolean cadastrar(Cliente cliente) throws TipoChaveNaoEncontradaException {
-        return true;
     }
 
 
@@ -47,11 +41,6 @@ public class ClienteService extends GenericService<Cliente> implements IClienteS
     @Override
     public Cliente buscarPorCPF(Long cpf) {
         return clienteDAO.consultar(cpf);
-    }
-
-    @Override
-    public void excluir(Long cpf) {
-        clienteDAO.excluir(cpf);
     }
 
     @Override

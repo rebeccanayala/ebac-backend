@@ -1,19 +1,9 @@
 package services;
 
+import dao.generics.IGenericService;
 import domain.Cliente;
 import exceptions.TipoChaveNaoEncontradaException;
 
-public interface IClienteService {
+public interface IClienteService extends IGenericService<Cliente> {
 
-    Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException;
-
-    Cliente buscarPorCPF(Long cpf);
-
-    void excluir(Long cpf);
-
-    void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException;
-
-    Cliente consultar(Long cpf);
-
-    Boolean cadastrar(Cliente entity) throws TipoChaveNaoEncontradaException;
 }

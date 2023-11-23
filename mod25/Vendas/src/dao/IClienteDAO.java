@@ -1,8 +1,8 @@
-package services;
+package dao;
 
 import domain.Cliente;
 
-public interface IClienteService {
+public interface IClienteDAO {
 
     void salvar(Cliente cliente);
 

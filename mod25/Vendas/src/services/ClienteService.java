@@ -1,12 +1,36 @@
 package services;
 
 import dao.IClienteDAO;
+import dao.generics.GenericService;
 import domain.Cliente;
 import exceptions.TipoChaveNaoEncontradaException;
 
-public class ClienteService implements IClienteService{
+public class ClienteService extends GenericService<Cliente> implements IClienteService{
+    @Override
+    public Class<Cliente> getTipoClasse() {
+        return null;
+    }
 
-    private IClienteDAO clienteDAO;
+    @Override
+    public void atualiarDados(Cliente entity, Cliente entityCadastrado) {
+
+    }
+
+    @Override
+    public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
+        return null;
+    }
+
+    @Override
+    public Cliente buscarPorCPF(Long cpf) {
+        return null;
+    }
+
+
+
+
+
+    /*private IClienteDAO clienteDAO;
     public ClienteService(IClienteDAO clienteDAO) {
         this.clienteDAO = clienteDAO;
     }
@@ -29,5 +53,5 @@ public class ClienteService implements IClienteService{
     @Override
     public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException {
         clienteDAO.alterar(cliente);
-    }
+    }*/
 }

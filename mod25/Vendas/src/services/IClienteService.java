@@ -12,4 +12,8 @@ public interface IClienteService {
     void excluir(Long cpf);
 
     void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException;
+
+    Cliente consultar(Long cpf);
+
+    Boolean cadastrar(Cliente cliente);
 }

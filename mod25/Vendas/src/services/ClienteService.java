@@ -5,7 +5,7 @@ import dao.generics.GenericService;
 import domain.Cliente;
 import exceptions.TipoChaveNaoEncontradaException;
 
-public class ClienteService extends GenericService<Cliente> implements IClienteService{
+public class ClienteService extends GenericService<Cliente> implements IClienteService {
     @Override
     public Class<Cliente> getTipoClasse() {
         return null;
@@ -24,6 +24,10 @@ public class ClienteService extends GenericService<Cliente> implements IClienteS
     @Override
     public Cliente buscarPorCPF(Long cpf) {
         return null;
+    }
+
+    public Boolean cadastrar(Cliente cliente) throws TipoChaveNaoEncontradaException {
+        return true;
     }
 
 

@@ -15,5 +15,5 @@ public interface IClienteService {
 
     Cliente consultar(Long cpf);
 
-    Boolean cadastrar(Cliente cliente);
+    Boolean cadastrar(Cliente entity) throws TipoChaveNaoEncontradaException;
 }

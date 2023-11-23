@@ -1,9 +1,9 @@
 package services;
 
-import dao.generics.GenericService;
+import dao.IClienteDAO;
 import domain.Cliente;
 
-public class ClienteService extends GenericService<Cliente> implements IClienteService {
+public class ClienteService implements IClienteService {
     @Override
     public Class<Cliente> getTipoClasse() {
         return Cliente.class;
@@ -14,13 +14,33 @@ public class ClienteService extends GenericService<Cliente> implements IClienteS
 
     }
 
-    public ClienteService() {
+    public ClienteService(IClienteDAO dao) {
         super();
     }
 
     @Override
     public Object excluir(Long id) {
         // Implementação da exclusão, se necessário.
+        return null;
+    }
+
+    @Override
+    public Cliente consultar(Long cpf) {
+        return null;
+    }
+
+    @Override
+    public Boolean cadastrar(Cliente cliente) {
+        return null;
+    }
+
+    @Override
+    public void alterar(Cliente cliente) {
+
+    }
+
+    @Override
+    public Cliente buscarPorCPF(Long cpf) {
         return null;
     }
 

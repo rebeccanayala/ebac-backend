@@ -37,6 +37,17 @@ public class ClienteServiceTest {
     }
 
     @Test
+    public void pesquisarCliente() {
+        Cliente clienteConsultado = clienteService.buscarPorCPF(cliente.getCpf());
+    }
+
+    @Test
+    public void salvarCliente() throws TipoChaveNaoEncontradaException {
+        Boolean retorno = clienteService.cadastrar(cliente);
+
+    }
+
+    @Test
     public void excluirCliente() {
         clienteService.excluir(cliente.getCpf());
     }

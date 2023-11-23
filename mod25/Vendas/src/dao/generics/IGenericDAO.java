@@ -19,8 +19,9 @@ public interface IGenericDAO <T extends Persistente> {
      * Método para excluir um registro do banco de dados
      *
      * @param valor chave única do dado a ser excluído
+     * @return
      */
-    public void excluir(Long valor);
+    public Object excluir(Long valor);
 
     /**
      *Método para alterar um registro no bando de dados.

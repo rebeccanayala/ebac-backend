@@ -14,8 +14,9 @@ public class ClienteDAOMock implements IClienteDAO{
     }
 
     @Override
-    public void excluir(Long valor) {
+    public Object excluir(Long valor) {
 
+        return null;
     }
 
     @Override

@@ -67,13 +67,12 @@ public abstract class GenericService<T extends Persistente> implements IGenericD
     }
 
     @Override
-    public void excluir(Long valor) {
+    public Object excluir(Long valor) {
         //Map<Long, T> mapaInterno = this.map.get(getTipoClasse());
         Map<Long, T> mapaInterno = (Map<Long, T>) this.singletonMap.getMap().get(getTipoClasse());
         T objetoCadastrado = mapaInterno.get(valor);
-        if (objetoCadastrado != null) {
-            mapaInterno.remove(valor, objetoCadastrado);
-        }
+        Object returnValue = new Object();
+        return returnValue;
     }
 
     @Override

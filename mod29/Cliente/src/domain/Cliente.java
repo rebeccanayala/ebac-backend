@@ -1,6 +1,7 @@
 package domain;
 
 public class Cliente {
+
     private Long id;
 
     private String codigo;
@@ -30,5 +31,6 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 
 }

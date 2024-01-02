@@ -1,7 +1,6 @@
 package dao;
 
 import dao.IGenericDAO;
-import domain.Venda;
 import exceptions.DAOException;
 import exceptions.TipoChaveNaoEncontradaException;
 

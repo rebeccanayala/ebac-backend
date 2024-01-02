@@ -16,8 +16,6 @@ import dao.factory.ProdutoQuantidadeFactory;
 import dao.factory.VendaFactory;
 import dao.GenericDAO;
 import domain.ProdutoQuantidade;
-import domain.Venda;
-import domain.Venda.Status;
 import exceptions.DAOException;
 import exceptions.MaisDeUmRegistroException;
 import exceptions.TableException;

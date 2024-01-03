@@ -43,6 +43,7 @@ public class ClienteDAOTest {
         cliente.setCidade("São Paulo");
         cliente.setEnd("End");
         cliente.setEstado("SP");
+        cliente.setCep(Long.valueOf("13333333"));
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
         clienteDao.cadastrar(cliente);
@@ -61,6 +62,7 @@ public class ClienteDAOTest {
         cliente.setCidade("São Paulo");
         cliente.setEnd("End");
         cliente.setEstado("SP");
+        cliente.setCep(Long.valueOf("13333333"));
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
         Boolean retorno = clienteDao.cadastrar(cliente);
@@ -81,6 +83,7 @@ public class ClienteDAOTest {
         cliente.setCidade("São Paulo");
         cliente.setEnd("End");
         cliente.setEstado("SP");
+        cliente.setCep(Long.valueOf("13333333"));
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
         Boolean retorno = clienteDao.cadastrar(cliente);
@@ -98,10 +101,11 @@ public class ClienteDAOTest {
     public void alterarCliente() throws TipoChaveNaoEncontradaException, MaisDeUmRegistroException, TableException, DAOException {
         Cliente cliente = new Cliente();
         cliente.setCpf(56565656565L);
-        cliente.setNome("Rodrigo");
+        cliente.setNome("Rebecca");
         cliente.setCidade("São Paulo");
         cliente.setEnd("End");
         cliente.setEstado("SP");
+        cliente.setCep("13333333");
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
         Boolean retorno = clienteDao.cadastrar(cliente);
@@ -126,10 +130,11 @@ public class ClienteDAOTest {
     public void buscarTodos() throws TipoChaveNaoEncontradaException, DAOException {
         Cliente cliente = new Cliente();
         cliente.setCpf(56565656565L);
-        cliente.setNome("Rodrigo");
+        cliente.setNome("Rebecca");
         cliente.setCidade("São Paulo");
         cliente.setEnd("End");
         cliente.setEstado("SP");
+        cliente.setCep(Long.valueOf("13333333"));
         cliente.setNumero(10);
         cliente.setTel(1199999999L);
         Boolean retorno = clienteDao.cadastrar(cliente);
@@ -137,10 +142,11 @@ public class ClienteDAOTest {
 
         Cliente cliente1 = new Cliente();
         cliente1.setCpf(56565656569L);
-        cliente1.setNome("Rodrigo");
+        cliente1.setNome("Rebecca");
         cliente1.setCidade("São Paulo");
         cliente1.setEnd("End");
         cliente1.setEstado("SP");
+        cliente1.setCep(Long.valueOf("13333333"));
         cliente1.setNumero(10);
         cliente1.setTel(1199999999L);
         Boolean retorno1 = clienteDao.cadastrar(cliente1);

@@ -1,6 +1,7 @@
 package domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_carro")
@@ -17,6 +18,12 @@ public class Carro {
 
     @Column(name = "acessorio", length = 30, nullable = false)
     private String acessorio;
+
+    @OneToMany(mappedBy = "carro")
+    private List<Marca> marcas;
+
+    @OneToMany(mappedBy = "carro")
+    private List<Acessorio> acessorios;
 
     public Long getId() {
         return id;
@@ -40,5 +47,21 @@ public class Carro {
 
     public void setAcessorio(String acessorio) {
         this.acessorio = acessorio;
+    }
+
+    public List<Marca> getMarcas() {
+        return marcas;
+    }
+
+    public void setMarcas(List<Marca> marcas) {
+        this.marcas = marcas;
+    }
+
+    public List<Acessorio> getAcessorios() {
+        return acessorios;
+    }
+
+    public void setAcessorios(List<Acessorio> acessorios) {
+        this.acessorios = acessorios;
     }
 }

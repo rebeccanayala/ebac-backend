@@ -2,6 +2,6 @@ package dao;
 
 import domain.Acessorio;
 
-
-public class IAcessorioDao {
+public interface IAcessorioDao {
+    public Acessorio cadastrar(Acessorio acessorio);
 }

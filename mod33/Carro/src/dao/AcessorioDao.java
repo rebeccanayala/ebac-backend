@@ -1,26 +1,26 @@
 package dao;
 
-import domain.Marca;
+import domain.Acessorio;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class MarcaDao implements IMarcaDao{
+public class AcessorioDao implements IAcessorioDao {
     @Override
-    public Marca cadastrar(Marca marca) {
+    public Acessorio cadastrar(Acessorio acessorio) {
 
         EntityManagerFactory entityManagerFactory =
                 Persistence.createEntityManagerFactory("CarroJPA");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         entityManager.getTransaction().begin();
-        entityManager.persist(marca);
+        entityManager.persist(acessorio);
         entityManager.getTransaction().commit();
 
         entityManager.close();
         entityManagerFactory.close();
 
-        return marca;
+        return acessorio;
     }
 }

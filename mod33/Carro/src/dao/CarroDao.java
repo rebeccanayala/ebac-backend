@@ -20,6 +20,7 @@ public class CarroDao implements ICarroDao {
 
         entityManager.close();
         entityManagerFactory.close();
+
         return carro;
     }
 }

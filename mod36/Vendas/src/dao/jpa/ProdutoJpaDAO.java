@@ -1,10 +1,10 @@
 package dao.jpa;
 
-import dao.generic.jpa.GenericJpaDAO;
+import dao.generic.jpa.GenericJpaDB1DAO;
 import domain.jpa.ProdutoJpa;
 
 
-public class ProdutoJpaDAO extends GenericJpaDAO<ProdutoJpa, Long> implements IProdutoJpaDAO {
+public class ProdutoJpaDAO extends GenericJpaDB1DAO<ProdutoJpa, Long> implements IProdutoJpaDAO {
 
     public ProdutoJpaDAO() {
         super(ProdutoJpa.class);

@@ -3,9 +3,8 @@ package services.generic.jpa;
 import java.io.Serializable;
 import java.util.Collection;
 
-import dao.Persistente;
-import dao.generic.IGenericDAO;
 import dao.generic.jpa.IGenericJapDAO;
+import domain.jpa.Persistente;
 import exceptions.DAOException;
 import exceptions.MaisDeUmRegistroException;
 import exceptions.TableException;
@@ -19,7 +18,6 @@ public abstract class GenericJpaService<T extends Persistente, E extends Seriali
     public GenericJpaService(IGenericJapDAO<T, E> dao) {
         this.dao = dao;
     }
-
 
     @Override
     public T cadastrar(T entity) throws TipoChaveNaoEncontradaException, DAOException {

@@ -8,13 +8,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import dao.Persistente;
+import domain.jpa.Persistente;
 import exceptions.DAOException;
 import exceptions.MaisDeUmRegistroException;
 import exceptions.TableException;
 import exceptions.TipoChaveNaoEncontradaException;
 
+
 public class GenericJpaDAO <T extends Persistente, E extends Serializable> implements IGenericJapDAO <T,E> {
+
+    private static final String PERSISTENCE_UNIT_NAME = "Postgre1";
 
     protected EntityManagerFactory entityManagerFactory;
 
@@ -22,8 +25,11 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 
     private Class<T> persistenteClass;
 
-    public GenericJpaDAO(Class<T> persistenteClass) {
+    private String persistenceUnitName;
+
+    public GenericJpaDAO(Class<T> persistenteClass, String persistenceUnitName) {
         this.persistenteClass = persistenteClass;
+        this.persistenceUnitName = persistenceUnitName;
     }
 
     @Override
@@ -73,7 +79,7 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
 
     protected void openConnection() {
         entityManagerFactory =
-                Persistence.createEntityManagerFactory("ExemploJPA");
+                Persistence.createEntityManagerFactory(getPersistenceUnitName());
         entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
     }
@@ -89,5 +95,14 @@ public class GenericJpaDAO <T extends Persistente, E extends Serializable> imple
         sb.append(this.persistenteClass.getSimpleName());
         sb.append(" obj");
         return sb.toString();
+    }
+
+    private String getPersistenceUnitName() {
+        if (persistenceUnitName != null
+                && !"".equals(persistenceUnitName)) {
+            return persistenceUnitName;
+        } else {
+            return PERSISTENCE_UNIT_NAME;
+        }
     }
 }

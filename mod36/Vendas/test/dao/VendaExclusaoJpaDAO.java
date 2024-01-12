@@ -27,4 +27,4 @@ public class VendaExclusaoJpaDAO extends GenericJpaDB1DAO<VendaJpa, Long> implem
         throw new UnsupportedOperationException("OPERAÇÃO NÃO PERMITIDA");
     }
 
-}}
+}

@@ -1,12 +1,12 @@
 package dao;
 
-import dao.generic.jpa.GenericJpaDAO;
+import dao.generic.jpa.GenericJpaDB1DAO;
 import dao.jpa.IVendaJpaDAO;
 import domain.jpa.VendaJpa;
 import exceptions.DAOException;
 import exceptions.TipoChaveNaoEncontradaException;
 
-public class VendaExclusaoJpaDAO extends GenericJpaDAO<VendaJpa, Long> implements IVendaJpaDAO {
+public class VendaExclusaoJpaDAO extends GenericJpaDB1DAO<VendaJpa, Long> implements IVendaJpaDAO {
 
     public VendaExclusaoJpaDAO() {
         super(VendaJpa.class);
@@ -27,4 +27,4 @@ public class VendaExclusaoJpaDAO extends GenericJpaDAO<VendaJpa, Long> implement
         throw new UnsupportedOperationException("OPERAÇÃO NÃO PERMITIDA");
     }
 
-}
+}}

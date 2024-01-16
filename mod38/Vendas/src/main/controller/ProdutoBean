@@ -1,0 +1,27 @@
+package main.controller;
+
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+import com.vendas.model.Produto;
+import com.vendas.service.ProdutoService;
+
+@ManagedBean
+@ViewScoped
+public class ProdutoBean {
+
+    @EJB
+    private ProdutoService produtoService;
+
+    private List<Produto> produtos;
+
+    public List<Produto> getProdutos() {
+        if (produtos == null) {
+            produtos = produtoService.listarTodos();
+        }
+        return produtos;
+    }
+}

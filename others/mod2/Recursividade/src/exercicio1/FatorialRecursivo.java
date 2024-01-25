@@ -1,6 +1,6 @@
 package exercicio1;
 
-public class Recursividade {
+public class FatorialRecursivo {
     public static void main(String[] args) {
       int numero = 4;
       long resultado = calcularFatorial(numero);

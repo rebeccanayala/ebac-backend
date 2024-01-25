@@ -10,9 +10,6 @@ public class Main {
 
         System.out.println("Topo da pilha: " + pilha.top());
         System.out.println("Tamanho da pilha: " + pilha.size());
-
         System.out.println("Removido da pilha: " + pilha.pop());
-        System.out.println("Topo da pilha: " + pilha.top());
-        System.out.println("Tamanho da pilha: " + pilha.size());
     }
 }
